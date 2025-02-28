@@ -5,13 +5,20 @@
   --color-secondary: #0b7999;
   --color-primary-bg: #071b1a;
   --color-secondary-bg: #0c2e2d;
+  --color-warn: #f6ca16;
 
   --color-white-500: #fbfbfb;
   --color-white: #ffffff;
+  --color-gray-100: #d9d9d9;
 
-  --background-image-primary-gradient: linear-gradient(to right, #0b7999, #1ad061);
+  --background-image-primary-gradient: linear-gradient(
+    to right,
+    #0b7999,
+    #1ad061
+  );
 
   --font-poppins: "var(--font-poppins)";
+  --font-inter: "var(--font-inter)";
 }
 
 /*
@@ -30,4 +37,68 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+}
+
+@layer {
+  .cs-container {
+    @apply mx-auto max-w-7xl px-4 xl:px-0;
+  }
+
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .hero-cta {
+    @apply before:bg-primary-gradient shadow-primary/30 relative flex overflow-hidden rounded-full bg-transparent px-12 py-4 transition-all before:absolute before:top-0 before:bottom-0 before:left-0 before:z-0 before:h-full before:w-0 before:transition-all before:duration-500 hover:shadow-lg hover:before:w-full;
+  }
+
+  .mobile-nav {
+    @apply absolute top-10 left-0 z-99 max-h-0 min-w-50 overflow-hidden rounded-3xl bg-white/10 backdrop-blur-xl transition-all;
+  }
+
+  .mobile-nav.open {
+    @apply max-h-150 border border-white/20 p-4;
+  }
+}
+
+/* CSS STYLES */
+html,
+body {
+  overflow-x: hidden;
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1.5px;
+  background:
+    linear-gradient(222.44deg, #1ad061 0%, rgba(11, 121, 153, 0) 31.82%),
+    linear-gradient(45deg, #1ad061 0%, rgba(11, 121, 153, 0) 31.82%);
+
+  -webkit-mask:
+    linear-gradient(white 0 0) content-box,
+    linear-gradient(to bottom left, black 50%, transparent 50%),
+    linear-gradient(to top right, black 50%, transparent 50%);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.hero-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px; /* Border thickness */
+  border-radius: 100vw;
+  background: linear-gradient(97.09deg, #0b7999 9.4%, #1ad061 90.4%);
+  -webkit-mask:
+    linear-gradient(white 0 0) content-box,
+    linear-gradient(white 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
