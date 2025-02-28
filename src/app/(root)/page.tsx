@@ -41,7 +41,7 @@ export default function Home() {
               </div>
             </FadeWrapper>
           </div>
-          <FadeWrapper>
+          <FadeWrapper className="backdrop-blur-xl">
             <div className="hero-card relative z-10 rounded-[20px] bg-white/5 px-5 py-6 backdrop-blur-[20px]">
               {/* DOT */}
               <div className="bg-primary absolute -top-5 right-0 size-3 animate-pulse rounded-full"></div>
