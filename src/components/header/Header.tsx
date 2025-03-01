@@ -40,7 +40,7 @@ const Header = () => {
           {/* LOGIN BUTTON - DESKTOP */}
           <button
             type="button"
-            className="hidden cursor-pointer rounded-full bg-gradient-to-b from-[#00FF99] to-[#0077CC] px-8 py-3 text-white shadow-[0px_10px_50px_0px_#00FF994D] transition hover:shadow-none md:block"
+            className="font-inter hidden cursor-pointer rounded-full bg-gradient-to-b from-[#00FF99] to-[#0077CC] px-8 py-3 font-semibold text-white shadow-[0px_10px_50px_0px_#00FF994D] transition hover:shadow-none md:block"
           >
             Log in / Join
           </button>

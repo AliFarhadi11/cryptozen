@@ -10,11 +10,13 @@ import Header from "@/components/header/Header";
 const poppins = Poppins({
   weight: ["400", "500", "700"],
   variable: "--font-poppins",
+  subsets: ["latin"],
 });
 
 const inter = Inter({
-  weight: ["400"],
+  weight: ["600"],
   variable: "--font-inter",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +28,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${inter.variable} font-poppins bg-black antialiased min-h-screen`}
+        className={`${poppins.variable} ${inter.variable} font-poppins min-h-screen bg-black antialiased`}
       >
         <Header />
         <main>{children}</main>
